@@ -2,7 +2,7 @@ GIVEN:
 
 Request-class describing some request to be processed;
 Request* GetRequest()-function returning request, may take a while to work;
-void ProcessRequest(Request* request)-function processing request, also can consume a noticable time.
+void ProcessRequest(Request* request)-function processing request, also can consume a noticable time. Not delete memory taken by request.
 
 
 NEEDS TO BE IMPLEMENTED:
