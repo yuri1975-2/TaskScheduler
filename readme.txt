@@ -21,6 +21,7 @@ Multithreaded application with:
 
 
 SOLUTION:
+
 Request-describes request;
 
 Thread-Java-like class incapsulating work with C++ thread;
