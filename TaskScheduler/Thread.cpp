@@ -5,6 +5,7 @@
 
 void Thread::run()
 {
+	mIsRun = true;
 
 	ostringstream os;
 	os << "Thread::run(), thread id:" << this_thread::get_id() << endl;
