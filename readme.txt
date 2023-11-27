@@ -24,7 +24,7 @@ SOLUTION:
 
 Request-describes request;
 
-Thread-Java-like class incapsulating work with C++ thread;
+Thread-class incapsulating work with C++ thread;
 
 TaskHolder-base thread derived from Thread. In cycle by means of GetRequest() retrieves requests to process and put'em to queue. Provides implementation of TaskProcessor::ITaskRetriever used by TaskProcessor to retrieve request to process from queue;
 
