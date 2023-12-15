@@ -49,7 +49,7 @@ bool TaskHolder::processing()
 		mRequests.emplace(request);
 		if (1 == mRequests.size())
 		{
-			mRequestCV.notify_one();
+			mRequestCV.notify_all();
 		}
 	}
 	
@@ -114,9 +114,7 @@ void TaskHolder::preamble()
 
 unique_ptr<Request> TaskHolder::getTask()
 {
-	lock_guard lg(mRetrieveMutex); // ensure only one processor thread accessing to task queue...
-
-	unique_lock ul(mRequestsMutex);  // synchronize access to task queue by processor and scheduler thread
+	unique_lock ul(mRequestsMutex);
 	if (mRequests.empty())
 	{
 		mRequestCV.wait_for(ul, chrono::milliseconds(TASK_WAIT_TIME)); // avoid infinite waiting and such uninteruptability of thread

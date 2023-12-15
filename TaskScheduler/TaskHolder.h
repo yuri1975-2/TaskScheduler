@@ -28,7 +28,6 @@ private:
 	queue<unique_ptr<Request>, list<unique_ptr<Request>>> mRequests;
 	mutex mRequestsMutex;
 	condition_variable mRequestCV;
-	mutex mRetrieveMutex;
 
 protected:
 	bool processing() override;
